@@ -1,0 +1,38 @@
+{
+    "homepage": "https://github.com/PowerShell/PowerShell",
+    "description": "Cross-platform automation and configuration tool/framework, known as Powershell Core, that works well with existing tools and is optimized for dealing with structured data.",
+    "version": "7.1.0-preview.3",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.1.0-preview.3/PowerShell-7.1.0-preview.3-win-x64.zip",
+            "hash": "85b887c026d00302c7e05e5ae76580069b51a68dfd69a8fa0d3444a34cae6bc6"
+        },
+        "32bit": {
+            "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.1.0-preview.3/PowerShell-7.1.0-preview.3-win-x86.zip",
+            "hash": "a9ae4ed8bf2afca50522d98c0f72d520927cb39b5204642b09f9f84bf2a6730a"
+        }
+    },
+    "bin": "preview\\pwsh-preview.cmd",
+    "shortcuts": [
+        [
+            "preview\\pwsh-preview.cmd",
+            "PowerShell Core (Preview)"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/PowerShell/PowerShell/releases/download/v$version/PowerShell-$version-win-x64.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/PowerShell/PowerShell/releases/download/v$version/PowerShell-$version-win-x86.zip"
+            }
+        },
+        "hash": {
+            "url": "https://github.com/PowerShell/PowerShell/releases/tag/v$version/",
+            "find": "$basename\\s*<ul>\\s*<li>([A-Fa-f\\d]{64})"
+        }
+    }
+}
